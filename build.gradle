@@ -13,6 +13,10 @@ buildscript {
 	}
 }
 
+plugins {
+	id 'com.github.kt3k.coveralls' version '2.8.1'
+}
+
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
@@ -32,6 +36,12 @@ repositories {
 	mavenCentral()
 }
 
+cobertura {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = false
+    }
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
