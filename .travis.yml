@@ -1,6 +1,8 @@
 language: java
 install: gradle assemble
-script: gradle check
+script: 
+  - gradle check
+  - ./gradlew build jacocoTestReport
 
 jdk:
   - oraclejdk8
