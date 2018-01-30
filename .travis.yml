@@ -2,12 +2,12 @@ language: java
 install: gradle assemble
 script: 
   - gradle check
-  - ./gradlew build jacocoTestReport
+  - gradlew build jacocoTestReport
 
 jdk:
   - oraclejdk8
 
 after_success:
-  - ./gradlew jacocoTestReport coveralls
+  - gradlew jacocoTestReport coveralls
 
 sudo: false
