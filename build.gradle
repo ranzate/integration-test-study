@@ -42,14 +42,12 @@ jacoco {
 }
 
 jacocoTestReport {
+	group = "Reporting"
     reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = false
+        xml.enabled true
+        csv.enabled false
+		html.destination "${buildDir}/reports/coverage"
     }
-}
-
-jacoco {
-    toolVersion = '0.7.9'
 }
 
 dependencies {
